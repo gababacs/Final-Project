@@ -40,7 +40,7 @@ public class RentalGUI extends JFrame {
         setVisible(true);
     }
 
-    // ---------------- HEADER ----------------
+    // HEADER 
     private JPanel createHeader() {
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
@@ -63,7 +63,7 @@ public class RentalGUI extends JFrame {
         return panel;
     }
 
-    // ---------------- BIKE GRID ----------------
+    // BIKE GRID
     private JPanel createBikeGrid() {
         JPanel outer = new JPanel(new GridBagLayout());
         JPanel grid = new JPanel(new GridLayout(2, 3, 20, 20));
@@ -82,7 +82,7 @@ public class RentalGUI extends JFrame {
             bikePanel.setLayout(new BoxLayout(bikePanel, BoxLayout.Y_AXIS));
             bikePanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
-            // ---- NAME & RATE ----
+            // Bike Name and Rate
             JLabel nameLabel = new JLabel(bike.getName(), SwingConstants.CENTER);
             nameLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
@@ -92,7 +92,7 @@ public class RentalGUI extends JFrame {
             );
             rateLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-            // ---- HOURS CONTROLS ----
+            // '+' and '-' buttons for number of hours
             JPanel hourPanel = new JPanel();
             JButton minusBtn = new JButton("-");
             JLabel hourLabel = new JLabel("1");
@@ -169,12 +169,12 @@ public class RentalGUI extends JFrame {
                 );
             });
 
-            // ---- VIEW DETAILS ----
+            // View Details Button
             JButton viewBtn = new JButton("View Details");
             viewBtn.setAlignmentX(Component.CENTER_ALIGNMENT);
             viewBtn.addActionListener(e -> showBikeDetails(bike));
 
-            // ---- ADD COMPONENTS TO PANEL ----
+            // finalization of panel
             bikePanel.add(Box.createVerticalStrut(MAX_VERTICAL_STRUT));
             bikePanel.add(nameLabel);
             bikePanel.add(rateLabel);
@@ -197,8 +197,9 @@ public class RentalGUI extends JFrame {
         return outer;
     }
 
-    // ---------------- SHOW BIKE DETAILS ----------------
+    // Show Bike Details Button
     private void showBikeDetails(BikeClasses bike) {
+        // opens a dialog that displays details
         JDialog detailsDialog = new JDialog(this, bike.getName(), true);
         detailsDialog.setSize(400, 300);
         detailsDialog.setLayout(new BoxLayout(detailsDialog.getContentPane(), BoxLayout.Y_AXIS));
@@ -225,7 +226,7 @@ public class RentalGUI extends JFrame {
         detailsDialog.setVisible(true);
     }
 
-    // ---------------- CART BUTTON ----------------
+    // cart button for check out
     private JPanel createCartButton() {
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
@@ -247,13 +248,8 @@ public class RentalGUI extends JFrame {
         return panel;
     }
 
-    // ---------------- RE-ENABLE BUTTON ----------------
+    // re-enable button after removing an item from cart
     public void enableAddButton(int index) {
         addButtons[index].setEnabled(true);
-    }
-
-    // ---------------- MAIN ----------------
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(RentalGUI::new);
     }
 }
