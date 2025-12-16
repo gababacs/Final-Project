@@ -1,7 +1,8 @@
 # Final-Project
-Bike my Type: Bike Rental Management System
+Bike My Type: Bike Rental Management System
 
 Group Name: Pokpok Girls (Bacsal, Glaziela B. and Palma, Angelo Joachim L.)
+
 Course: CMSC 22 - Object-Oriented Programming
 Status: In Development
 
