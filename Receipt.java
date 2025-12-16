@@ -11,7 +11,7 @@ public class Receipt {
         for (CartItem item : items) {
             sb.append(item.getBike().getName())
               .append(" | ")
-              .append(item.getHours()).append(" hr(s) | Php")
+              .append(item.getHours()).append(" hr(s) | Php ")
               .append(item.getSubtotal()).append("\n");
         }
         sb.append("\nTotal: Php").append(total);
@@ -19,4 +19,5 @@ public class Receipt {
         JOptionPane.showMessageDialog(null, sb.toString(), "Receipt", JOptionPane.INFORMATION_MESSAGE);
     }
 }
+
 
