@@ -37,7 +37,9 @@ public class RentalSystem {
         return bikes[index].getHourlyRate() * hours;
     }
 
+    // runs the entire program
     public static void main(String[] args) {
         new RentalGUI();
     }
+
 }
